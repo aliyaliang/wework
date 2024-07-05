@@ -1,0 +1,7 @@
+contact_list_create_member:
+  # userid 和 mobile 均已在 python 脚本中使用变量替换
+  userid: zhangsan001
+  name: 张三
+  department: [1]
+  mobile: 13500000000
+
