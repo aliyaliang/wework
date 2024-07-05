@@ -1,4 +1,3 @@
-# base_url = "https://qyapi.weixin.qq.com"
 from conf.set_env import env
 
 
@@ -18,8 +17,4 @@ class Env(object):
             # 设置生产环境
             print("Running in production environment")
             base_url = "生产环境 url"
-        # print(base_url)
         return base_url
-
-
-# Env.testing_environment()
