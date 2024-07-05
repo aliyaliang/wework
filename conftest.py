@@ -1,6 +1,7 @@
 import pytest
 import requests
 from common.helper import read_yaml
+# from conf.env_params import base_url
 from requesturl.wework_request_url import RequestUrl
 
 
@@ -16,3 +17,9 @@ def get_wework_token():
     payload = {"corpid": corp_id, "corpsecret": corp_secret}
     response = requests.get(url=RequestUrl.get_wework_token_uri(), params=payload)
     return response
+
+
+def pytest_addoption(parser):
+    parser.addoption(
+        "--env", action="store", default="development", help="set environment: development, staging, or production"
+    )

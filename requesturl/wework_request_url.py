@@ -1,12 +1,19 @@
 # -*- coding: utf-8 -*-
+from conf.env_params import Env
 
 
 class RequestUrl(object):
 
+    base_url = Env.testing_environment()
+
     @staticmethod
     def get_wework_token_uri():
-        return "https://qyapi.weixin.qq.com/cgi-bin/gettoken"
+        base_url_instance = Env()
+        base_url = base_url_instance.testing_environment()
+        return base_url + "/cgi-bin/gettoken"
 
     @staticmethod
     def contact_list_create_member():
-        return "https://qyapi.weixin.qq.com/cgi-bin/user/create"
+        base_url_instance = Env()
+        base_url = base_url_instance.testing_environment()
+        return base_url + "/cgi-bin/user/create"
