@@ -9,11 +9,11 @@ class RequestUrl(object):
     @staticmethod
     def get_wework_token_uri():
         base_url_instance = Env()
-        base_url = base_url_instance.testing_environment()
+        base_url, corp_id, corp_secret = base_url_instance.testing_environment()
         return base_url + "/cgi-bin/gettoken"
 
     @staticmethod
     def contact_list_create_member():
         base_url_instance = Env()
-        base_url = base_url_instance.testing_environment()
+        base_url, corp_id, corp_secret = base_url_instance.testing_environment()
         return base_url + "/cgi-bin/user/create"
